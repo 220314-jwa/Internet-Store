@@ -1,0 +1,22 @@
+<div class="example-menu-row">
+  <button mat-stroked-button [matMenuTriggerFor]="menuHero" color="primary" ng-init><mat-icon >perm_identity</mat-icon>{{loggedInUser.lastName }} {{loggedInUser.firstName}}</button>
+  <mat-menu #menuHero="matMenu" class="uxg-user-profile">
+      <div class="uxg-menu-header">
+          <div class="uxg-avatar-hero-block">
+              <div class="uxg-avatar" large>RH</div>
+              <h6 class="uxg-h6">{{loggedInUser.lastName }} {{loggedInUser.firstName}}</h6>
+              <span class="uxg-caption">{{loggedInUser.email}}</span>
+          </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="uxg-menu-footer">
+          <button mat-flat-button color="primary" dense type="button" (click) = "logOut()">
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+          </button>
+          <button mat-button color="primary" dense >
+            <a routerLink="profilePage" routerLinkActive="active">View profile</a>  
+          </button>
+      </div>
+  </mat-menu>
+</div>

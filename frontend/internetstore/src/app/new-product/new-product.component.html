@@ -1,0 +1,35 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="center" >
+  
+  
+    <div fxFlex="100%" fxLayoutGap="20px"  class="example-form">
+      <div class ="description">
+        <p>Create product</p>
+        <mat-divider></mat-divider>
+      </div>
+      <mat-form-field appearance="legacy">
+        <mat-label>Product name:</mat-label>
+        <input matInput placeholder="Enter a product's name" [(ngModel)] = "product.name" name = "name" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="legacy">
+        <mat-label>Category:</mat-label>
+        <input matInput placeholder="Product's category" [(ngModel)] = "product.category" name = "category" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="legacy">
+        <mat-label>Price:</mat-label>
+        <input matInput placeholder="Price" [(ngModel)] = "product.price">
+      </mat-form-field>
+  
+      <mat-form-field appearance="legacy">
+        <mat-label>Code:</mat-label>
+        <input matInput placeholder="Product's code"  [(ngModel)] = "product.code">
+      </mat-form-field>
+  
+      <mat-form-field appearance="legacy">
+        <mat-label>Production date:</mat-label>
+        <input matInput placeholder="Production date" [(ngModel)] = "product.prodDate">
+      </mat-form-field>
+      <button mat-flat-button color="primary">Create product</button>
+    </div>
+  </div>
