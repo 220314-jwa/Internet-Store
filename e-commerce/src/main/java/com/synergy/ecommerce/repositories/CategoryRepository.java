@@ -8,4 +8,8 @@ import com.synergy.ecommerce.entities.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 	Optional<Category> findCategoryById(Long id);
+	
+	Category findCategoryByName(String Name);
+	
+	Category findCategoryByDesc(String Description);
 }
