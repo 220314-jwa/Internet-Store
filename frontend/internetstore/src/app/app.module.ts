@@ -27,7 +27,9 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { CreateproductComponent } from './createproduct/createproduct.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { CategoryComponent } from './components/category/category.component';
-
+import { ProductSearchPipe } from './product-search.pipe';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 /* Components */
 
 
@@ -48,6 +50,7 @@ import { CategoryComponent } from './components/category/category.component';
     CreateproductComponent,
     NewProductComponent,
     CategoryComponent,
+    ProductSearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -58,9 +61,11 @@ import { CategoryComponent } from './components/category/category.component';
     FormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [ProductService],
+  providers: [ProductService, MatDatepickerModule,],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

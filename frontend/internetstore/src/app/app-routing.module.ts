@@ -19,7 +19,7 @@ const routes: Routes = [
     { path: 'myOrders', component: OrdersComponent },
     { path: 'product', component: ProductComponent },
     { path: "profilePage", component: ProfilePageComponent },
-    { path: "createProduct", component: NewProductComponent },
+    { path: "createProduct", component: CreateproductComponent },
     { path: "createCategory", component: CategoryComponent },
 ];
 @NgModule({

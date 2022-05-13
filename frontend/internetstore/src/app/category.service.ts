@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Category } from './category';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,15 @@ export class CategoryService {
       map(resp => resp as Category)
     );
   }
+
+  getCategories(): Observable<Category[]> {
+    return this.http.get(this.url).pipe(
+      // format/map the response body as an array of pets
+      map(resp => resp as Category[])
+    );
+  }
+
+
+
 
 }
