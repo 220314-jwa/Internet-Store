@@ -20,7 +20,7 @@ public class ECommerceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ECommerceApplication.class, args);
 	}
-	    @Bean
+	/*    @Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			public void addCorsMappings(CorsRegistry registry) {
@@ -31,7 +31,7 @@ public class ECommerceApplication {
 					.allowCredentials(true);
 			}
 		};
-	}
+	}*/
 
 	/*@Bean
 	CommandLineRunner commandLineRunner(CustomerRepository customerRepository)

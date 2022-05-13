@@ -23,6 +23,7 @@ import com.synergy.ecommerce.services.CustomerService;
 @RequestMapping(path = "api/v1/cart")
 @CrossOrigin(origins="http://localhost:4200")
 public class CartController {
+
 private final CartService cartService;
 	
 	@Autowired
@@ -33,7 +34,7 @@ private final CartService cartService;
 	@GetMapping(path = {"{cartId}"})
 	public Cart getCart(@PathVariable("cartId") Long cartId
 ){
-		return cartService.getCart(cartId);	
+		return cartService.getCartById(cartId);	
 	}
 	
 	@PostMapping
@@ -48,7 +49,7 @@ private final CartService cartService;
 		System.out.println(id);
 	}
 	
-	@PutMapping(path = {"{cartId}"})
+	/*@PutMapping(path = {"{cartId}"})
 	public void updateCart(
 			@PathVariable("cartId") Long cartId,
 			@RequestParam(required = false) Integer quantity,
@@ -59,8 +60,9 @@ private final CartService cartService;
 			 {
 		
 		cartService.updateCart(cartId,quantity,totalcost,customer);
-	}
+	*/}
+
 	
 
 
-}
+

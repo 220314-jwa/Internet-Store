@@ -37,8 +37,8 @@ public class CustomerService {
 		throw new IllegalStateException("email taken");
 	}
 	System.out.println(customer);
+
 	return customerRepository.save(customer);
-	
 		
 	}
 	
@@ -52,7 +52,7 @@ public class CustomerService {
 	}
 
 	@Transactional
-	public void updateCustomer(Long customerId, String firstName, String lastName, String email, String address,
+	public Customer updateCustomer(Long customerId, String firstName, String lastName, String email, String address,
 			String password, Long phoneNumber,String username) {
 		
 		Customer customer = customerRepository.findById(customerId)
@@ -67,7 +67,10 @@ public class CustomerService {
 			customer.setPhoneNumber(phoneNumber);
 			customer.setUsername(password);
 			customer.setUsername(username);
+			
 		}
+	
+		return customer;
 		
 		
 	}
@@ -95,9 +98,8 @@ public class CustomerService {
 	}
 
 
-
 	public Customer getCustomerById(Long id) {
-		Customer customer = customerRepository.findById(id).get();
+		Customer customer = customerRepository.getCustomerById(id);
 	return customer;
 }
 

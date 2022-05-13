@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.synergy.ecommerce.entities.Category;
 import com.synergy.ecommerce.entities.Product;
-import com.synergy.ecommerce.repositories.CategoryRepository;
 import com.synergy.ecommerce.repositories.ProductRepository;
 
 @Service
@@ -25,10 +24,31 @@ public class ProductService {
 		return productRepository.findAll();
 	}
 
+
 	public Product addNewProduct(Product product) {
 		System.out.println(product);
 		return productRepository.save(product);
-		
+  }
+
+	
+	public Product getProductById(Long id) {
+		return productRepository.getById(id);
+	}
+	
+	public List<Product> getProductsByCategoryId(Long id){
+		return productRepository.findProductsByCategory(id);
+	}
+	
+	public Product getProductByCode(String name) {
+		return productRepository.findProductByCode(name);
+	}
+	public Product getProductByPrice(Double id) {
+		return productRepository.findProductByPrice(id);
+	}
+	public Product addNewProduct(Product product) {
+		productRepository.save(product);
+		System.out.println(product);
+		return product;
 	}
 
 	public void deleteProduct(Long id) {
@@ -40,7 +60,7 @@ public class ProductService {
 	}
 
 	@Transactional
-	public void updateProduct(Long id, String name, Double price, String code, Date prodDate, Category category) {
+	public Product updateProduct(Long id, String name, Double price, String code, Date prodDate, Category category) {
 		Product product = productRepository.findById(id)
 				.orElseThrow(() -> new IllegalStateException("Category with id " + id + " does not exist."));
 
@@ -51,7 +71,8 @@ public class ProductService {
 			product.setCode(code);
 			product.setProdDate(prodDate);
 			product.setCategory(category);
-
+			
 		}
+		return product;
 	}
 }
