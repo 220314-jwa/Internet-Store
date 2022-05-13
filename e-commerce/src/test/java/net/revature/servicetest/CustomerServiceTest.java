@@ -56,7 +56,7 @@ public class CustomerServiceTest {
 		Customer mockCustomer = new Customer();
 		mockCustomer.setUsername(username);
 		mockCustomer.setPassword(password);
-		when(customerRepository.findCustomerByUsername(mockCustomer.getUsername())).thenReturn(mockProduct);
+		when(customerRepository.findCustomerByUsername(mockCustomer.getUsername())).thenReturn(Optional.of(mockCustomer));
 		
 		// call the method we're testing
 		Customer result = customerService.login(username, password);
@@ -83,16 +83,14 @@ public class CustomerServiceTest {
 	}
 	
 	@Test
-	public Customer updateCustomer() {
+	public void updateCustomer() {
 		Customer newCustomer = new Customer();
 		Customer mockCustomer = new Customer();
 		// mock userDao.create(newUser)
 		when(customerRepository.save(newCustomer)).thenReturn(newCustomer);
-		Customer result = customerService.updateCustomer(mockCustomer);
+		Customer result = customerService.updateCustomer(mockCustomer.getId(),"","","","","",1L,"");
 		
-		assertNotEquals(0, result.getId()); {
-			customerService.updateCustomer(newCustomer);
-		}
+		assertNotEquals(0, result.getId()); 
 	}
 	
 	@Test

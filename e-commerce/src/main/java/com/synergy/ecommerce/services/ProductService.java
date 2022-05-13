@@ -53,7 +53,7 @@ public class ProductService {
 	}
 
 	@Transactional
-	public void updateProduct(Long id, String name, Double price, String code, Date prodDate, Category category) {
+	public Product updateProduct(Long id, String name, Double price, String code, Date prodDate, Category category) {
 		Product product = productRepository.findById(id)
 				.orElseThrow(() -> new IllegalStateException("Category with id " + id + " does not exist."));
 
@@ -66,5 +66,6 @@ public class ProductService {
 			product.setCategory(category);
 			
 		}
+		return product;
 	}
 }
