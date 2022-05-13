@@ -133,5 +133,11 @@ public class Product {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", code=" + code + ", prodDate=" + prodDate
 				+ ", category=" + category + "]";
 	}
+
+
+	public boolean deleteProduct() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }

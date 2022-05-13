@@ -2,6 +2,7 @@
 package net.revature.servicetest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
@@ -10,10 +11,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -137,6 +134,44 @@ public class ProductServiceTest {
 		assertEquals(mockProduct.getPrice(), product.getPrice());
 		System.out.println(product.getPrice());
 	}
+<<<<<<< HEAD
+	@Test
+	public void updateProduct() {
+		Product product = new Product();
+		Product mockProduct = new Product();
+		mockProduct.setId(1L);
+		mockProduct.setName("cucumber");
+		mockProduct.setPrice(1D);
+		mockProduct.setCode("vegetable");
+		mockProduct.setProdDate(new Date());
+		when(productRepository.save(mockProduct)).thenReturn(mockProduct);
+		Product result = productService.updateProduct(mockProduct);
+		
+		assertEquals(mockProduct.getId(), product.getId());
+		System.out.println(product.getId());
+		}
+	@Test
+	public void addNewProduct() {
+		Product newProduct = new Product();
+		Product mockProduct = new Product();
+		mockProduct.setId(1L);
+		mockProduct.setName("cucumber");
+		mockProduct.setPrice(1D);
+		mockProduct.setCode("vegetable");
+		mockProduct.setProdDate(new Date());
+		when(productRepository.save(newProduct)).thenReturn(mockProduct);
+		Product result = productService.addNewProduct(newProduct);
+		
+		assertNotEquals(0, result.getId());
+		}
+	@Test
+	public void deleteProduct() {
+		
+	}
+	
+	}
+=======
 }
 
+>>>>>>> 63701e59f91307ea54af716c6446d8691ce9e4f4
 

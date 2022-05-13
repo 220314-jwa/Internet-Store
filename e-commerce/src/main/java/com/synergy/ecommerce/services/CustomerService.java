@@ -30,7 +30,7 @@ public class CustomerService {
 		return customerRepository.findAll();
 	}
 
-	public void addNewCustomer(Customer customer) {
+	public Customer addNewCustomer(Customer customer) {
 		
 	Optional<Customer> customerOptional = customerRepository.findCustomerByEmail(customer.getEmail());
 	if(customerOptional.isPresent()) {
@@ -38,6 +38,7 @@ public class CustomerService {
 	}
 	customerRepository.save(customer);
 	System.out.println(customer);
+	return customer;
 		
 	}
 	
@@ -94,9 +95,8 @@ public class CustomerService {
 	}
 
 
-
 	public Customer getCustomerById(Long id) {
-		Customer customer = customerRepository.findById(id).get();
+		Customer customer = customerRepository.getCustomerById(id);
 	return customer;
 }
 
