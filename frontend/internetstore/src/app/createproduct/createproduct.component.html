@@ -7,8 +7,8 @@
       </div>
       <div class="form-group col-md-8 inputField">
       <label for="categorySelect"> Category </label>
-      <select [(ngModel)]="selectedCategory" class="form-select" id = "categorySelect">
-        <option *ngFor="let category of categories" [ngValue]="category.id" class="form-control">{{category.name}}</option>
+      <select [(ngModel)] = "selected" class="form-control" id = "categorySelect" required>
+        <option class="form-control" *ngFor="let category of categories" [value]="category.id" >{{category.name}}</option>
       </select>
     </div>
       <div class="form-group col-md-8 inputField">
@@ -31,3 +31,4 @@
     </div>
   </form>
 </div>
+<div>{{selected}}</div>

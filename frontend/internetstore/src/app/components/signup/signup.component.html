@@ -40,6 +40,9 @@
       <mat-label>Username:</mat-label>
       <input matInput placeholder="Username" [(ngModel)] = "user.username">
     </mat-form-field>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)] = "user.admin">Admin</mat-checkbox>
+    </section>
     <button mat-flat-button color="primary" (click) = "createUser()">Sign up</button>
   </div>
 </div>

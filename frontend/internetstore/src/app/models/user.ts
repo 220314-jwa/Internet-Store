@@ -8,5 +8,6 @@ export class User {
     phoneNumber?: number;
     username?: string;
     password?: string;
+    admin?: boolean;
 
 }
