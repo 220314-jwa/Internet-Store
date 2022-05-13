@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CategoryService } from '../category.service';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
@@ -11,9 +11,11 @@ import { Category } from '../category';
 export class CreateproductComponent implements OnInit {
   product!: Product;
   categories!: Category[];
-  selectedCategory!: number;
+  selected: any;
   category!: Category;
-  constructor(private productServ: ProductService, private categoryServ: CategoryService) { }
+
+  constructor(private productServ: ProductService, private categoryServ: CategoryService) {
+  }
 
   ngOnInit(): void {
     this.product = new Product();
@@ -22,9 +24,10 @@ export class CreateproductComponent implements OnInit {
   }
 
   createProduct() {
-    this.category.id = this.selectedCategory;
+    //this.category.id = this.selected.id;
     this.product.category = this.category;
     console.log(this.product);
+    console.log(this.category.id);
     this.productServ.createProduct(this.product).subscribe(
       resp => {
         this.product = resp;

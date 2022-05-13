@@ -1,3 +1,4 @@
+
 package net.revature.servicetest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -133,6 +134,7 @@ public class ProductServiceTest {
 		assertEquals(mockProduct.getPrice(), product.getPrice());
 		System.out.println(product.getPrice());
 	}
+<<<<<<< HEAD
 	@Test
 	public void updateProduct() {
 		Product product = new Product();
@@ -168,4 +170,8 @@ public class ProductServiceTest {
 	}
 	
 	}
+=======
+}
+
+>>>>>>> 63701e59f91307ea54af716c6446d8691ce9e4f4
 

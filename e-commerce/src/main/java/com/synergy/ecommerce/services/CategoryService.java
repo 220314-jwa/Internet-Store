@@ -23,6 +23,18 @@ public class CategoryService {
 		return categoryRepository.findAll();
 	}
 	
+	public Category getCategoryById(Long id){
+		return categoryRepository.getById(id);
+	}
+	
+	public Category getCategoryByName(String Name){
+		return categoryRepository.findCategoryByName(Name);
+	}
+	
+	public Category getCategoryByDesc(String Description) {
+		return categoryRepository.findCategoryByDesc(Description);
+	}
+	
 	public Category addNewCategory(Category category) {
 		categoryRepository.save(category);
 		System.out.println(category);

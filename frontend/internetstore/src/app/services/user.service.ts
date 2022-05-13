@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -34,11 +35,11 @@ export class UserService {
     return null as any;
   }
 
-  createUser(user: User) {
-    this.body = { firstName: user.firstName, lastName: user.lastName, email: user.email, address: user.address, password: user.password, phoneNumber: user.phoneNumber, username: user.username }
-    console.log(user.firstName);
-    return this.http.post(this.url + "customer", this.body, { headers: this.headers }).pipe(
-      map(resp => resp as User)
-    );
-  }
+  createUser(user: User):Observable<User>{
+  this.body = { firstName: user.firstName, lastName: user.lastName, email: user.email, address: user.address, password: user.password, phoneNumber: user.phoneNumber, username: user.username, admin: user.admin }
+  console.log(user.firstName);
+  return this.http.post(this.url + "customer", this.body, { headers: this.headers }).pipe(
+    map(resp => resp as User)
+  );
+}
 }
