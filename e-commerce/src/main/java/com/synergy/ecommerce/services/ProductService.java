@@ -38,9 +38,10 @@ public class ProductService {
 	public Product getProductByPrice(Double id) {
 		return productRepository.findProductByPrice(id);
 	}
-	public void addNewProduct(Product product) {
+	public Product addNewProduct(Product product) {
 		productRepository.save(product);
 		System.out.println(product);
+		return product;
 	}
 
 	public void deleteProduct(Long id) {
@@ -63,7 +64,7 @@ public class ProductService {
 			product.setCode(code);
 			product.setProdDate(prodDate);
 			product.setCategory(category);
-
+			
 		}
 	}
 }
