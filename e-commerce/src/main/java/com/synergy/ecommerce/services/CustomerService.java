@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import com.synergy.ecommerce.entities.Customer;
 import com.synergy.ecommerce.repositories.CustomerRepository;
 
+import exceptions.IncorrectCredentialsException;
+
 @Service
 public class CustomerService {
 
@@ -68,4 +70,34 @@ public class CustomerService {
 		
 		
 	}
+	
+	public Customer login(String username, String password) throws IncorrectCredentialsException {
+		Optional<Customer> customerOptional = customerRepository.findCustomerByUsername(username);		
+		if(customerOptional.isPresent()) {
+			
+			if(password.equals(customerOptional.get().getPassword())) {
+				
+				System.out.println("You logged in!");
+				return customerOptional.get();
+			}
+			else {
+				throw new IncorrectCredentialsException();
+			}	
+			
+		}else {
+			
+			throw new IncorrectCredentialsException();
+			
+		}
+		
+
+	}
+
+
+
+	public Customer getCustomerById(Long id) {
+		Customer customer = customerRepository.findById(id).get();
+	return customer;
+}
+
 }
