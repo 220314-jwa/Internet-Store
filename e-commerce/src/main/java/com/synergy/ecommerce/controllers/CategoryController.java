@@ -25,8 +25,8 @@ public class CategoryController {
 	}
 	
 	@PostMapping
-	public void registerNewCategory(@RequestBody Category category) {
-		categoryService.addNewCategory(category);
+	public Category registerNewCategory(@RequestBody Category category) {
+		return categoryService.addNewCategory(category);
 	}
 	
 	@DeleteMapping(path = {"/id"})

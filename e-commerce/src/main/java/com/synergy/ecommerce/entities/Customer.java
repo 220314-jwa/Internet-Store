@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "customer_id")
 	private Long id;
 
@@ -65,9 +65,11 @@ public class Customer {
 	public Customer() {
 	}
 
-	public Customer(String firstName, String lastName, String email, String address, Long phoneNumber, String password,
-			String username) {
+
+	public Customer(Long id, String firstName, String lastName, String email, String address, Long phoneNumber,
+			String password, String username, List<Order> orders) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -75,6 +77,7 @@ public class Customer {
 		this.phoneNumber = phoneNumber;
 		this.password = password;
 		this.username = username;
+		this.orders = orders;
 	}
 
 	public Long getId() {

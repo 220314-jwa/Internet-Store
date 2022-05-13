@@ -14,8 +14,19 @@
 	<name>e-commerce</name>
 	<description>Internet store </description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>1.8</java.version>
 	</properties>
+	<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>25.2.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -41,6 +52,10 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.3.4</version>
 		</dependency>
+		<dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-storage</artifactId>
+  </dependency>
 	</dependencies>
 
 	<build>

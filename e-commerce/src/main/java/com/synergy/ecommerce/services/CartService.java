@@ -6,11 +6,12 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.synergy.ecommerce.entities.Cart;
 import com.synergy.ecommerce.entities.Customer;
 import com.synergy.ecommerce.repositories.CartRepository;
-
+@Service
 public class CartService {
 	private final CartRepository cartRepository ;
 	
