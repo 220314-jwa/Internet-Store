@@ -134,7 +134,6 @@ public class ProductServiceTest {
 		assertEquals(mockProduct.getPrice(), product.getPrice());
 		System.out.println(product.getPrice());
 	}
-<<<<<<< HEAD
 	@Test
 	public void updateProduct() {
 		Product product = new Product();
@@ -145,7 +144,7 @@ public class ProductServiceTest {
 		mockProduct.setCode("vegetable");
 		mockProduct.setProdDate(new Date());
 		when(productRepository.save(mockProduct)).thenReturn(mockProduct);
-		Product result = productService.updateProduct(mockProduct);
+		Product result = productService.updateProduct(1L,"cucumber",120.0,"vegetable",new Date(),new Category());
 		
 		assertEquals(mockProduct.getId(), product.getId());
 		System.out.println(product.getId());
@@ -169,9 +168,8 @@ public class ProductServiceTest {
 		
 	}
 	
-	}
-=======
+
 }
 
->>>>>>> 63701e59f91307ea54af716c6446d8691ce9e4f4
+
 
