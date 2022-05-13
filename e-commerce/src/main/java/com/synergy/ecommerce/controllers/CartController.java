@@ -17,6 +17,7 @@ import com.synergy.ecommerce.services.CartService;
 import com.synergy.ecommerce.services.CustomerService;
 
 public class CartController {
+
 private final CartService cartService;
 	
 	@Autowired
@@ -54,6 +55,7 @@ private final CartService cartService;
 		
 		cartService.updateCart(cartId,quantity,totalcost,customer);
 	*/}
+
 	
 
 
