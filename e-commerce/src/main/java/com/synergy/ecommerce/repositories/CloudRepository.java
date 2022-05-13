@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.springframework.stereotype.Repository;
+@Repository
 public class CloudRepository {
 	public static Blob uploadObject(
 		      String projectId, String bucketName, String objectName, String filePath) throws IOException {

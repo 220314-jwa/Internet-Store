@@ -11,10 +11,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "product", uniqueConstraints = {
@@ -25,7 +27,7 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", updatable = false)
+	@Column(name = "product_id", updatable = false)
 	private Long id;
 	
 	@Column(name = "name", nullable = false, columnDefinition = "TEXT")
@@ -41,14 +43,27 @@ public class Product {
 	private Date prodDate;
 	
 	
-	 @ManyToOne(cascade = CascadeType.ALL)
-	    @JoinColumn(name = "category_id")
-	 @JsonBackReference
+	 @ManyToOne
+	  @JoinColumn(name = "category_id")
+	// @JsonBackReference
 	    private Category category;
 
+	 @ManyToOne
+	  @JoinColumn(name = "cart_id")
+	    private Cart cart;
 
 	public Long getId() {
 		return id;
+	}
+
+
+	public Cart getCart() {
+		return cart;
+	}
+
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 

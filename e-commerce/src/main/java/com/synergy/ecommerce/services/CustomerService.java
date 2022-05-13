@@ -30,14 +30,15 @@ public class CustomerService {
 		return customerRepository.findAll();
 	}
 
-	public void addNewCustomer(Customer customer) {
+	public Customer addNewCustomer(Customer customer) {
 		
 	Optional<Customer> customerOptional = customerRepository.findCustomerByEmail(customer.getEmail());
 	if(customerOptional.isPresent()) {
 		throw new IllegalStateException("email taken");
 	}
-	customerRepository.save(customer);
 	System.out.println(customer);
+	return customerRepository.save(customer);
+	
 		
 	}
 	

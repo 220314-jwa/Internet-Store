@@ -50,16 +50,15 @@ public class Customer {
 	@Column(name = "username", nullable = false)
 	private String username;
 
+	@Column(name = "admin")
+	private Boolean admin;
+	
 	@OneToMany(mappedBy = "customer")
 	@JsonManagedReference
 	private List<Order> orders;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name = "customer_cart", 
-      joinColumns = 
-        {@JoinColumn(name = "customer_id",referencedColumnName="customer_id") },
-      inverseJoinColumns = 
-        {@JoinColumn(name = "id",referencedColumnName="id") })
+	@OneToOne
+	@JoinColumn(name = "cart_id")
     private Cart cart;
 
 	public Customer() {
@@ -79,6 +78,26 @@ public class Customer {
 		this.username = username;
 		this.orders = orders;
 	}
+
+	public Boolean getAdmin() {
+		return admin;
+	}
+
+
+	public void setAdmin(Boolean admin) {
+		this.admin = admin;
+	}
+
+
+	public Cart getCart() {
+		return cart;
+	}
+
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+
 
 	public Long getId() {
 		return id;

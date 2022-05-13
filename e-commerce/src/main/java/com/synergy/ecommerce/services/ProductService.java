@@ -25,9 +25,10 @@ public class ProductService {
 		return productRepository.findAll();
 	}
 
-	public void addNewProduct(Product product) {
-		productRepository.save(product);
+	public Product addNewProduct(Product product) {
 		System.out.println(product);
+		return productRepository.save(product);
+		
 	}
 
 	public void deleteProduct(Long id) {
