@@ -3,6 +3,7 @@ import { CategoryService } from '../category.service';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 import { Category } from '../category';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-createproduct',
   templateUrl: './createproduct.component.html',
@@ -11,10 +12,10 @@ import { Category } from '../category';
 export class CreateproductComponent implements OnInit {
   product!: Product;
   categories!: Category[];
-  selected: any;
+  selectedCategory!: Category;
   category!: Category;
 
-  constructor(private productServ: ProductService, private categoryServ: CategoryService) {
+  constructor(private productServ: ProductService, private categoryServ: CategoryService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -24,13 +25,18 @@ export class CreateproductComponent implements OnInit {
   }
 
   createProduct() {
-    //this.category.id = this.selected.id;
-    this.product.category = this.category;
+    // this.category= this.selectedCategory;
+    console.log(this.selectedCategory);
+    this.product.category = this.selectedCategory;
     console.log(this.product);
     console.log(this.category.id);
     this.productServ.createProduct(this.product).subscribe(
       resp => {
         this.product = resp;
+        if (resp) {
+          this.router.navigate(['']);
+          console.log(resp.category);
+        }
       });
   }
 

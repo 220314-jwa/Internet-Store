@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/category';
 import { CategoryService } from 'src/app/category.service';
 @Component({
@@ -8,7 +9,7 @@ import { CategoryService } from 'src/app/category.service';
 })
 export class CategoryComponent implements OnInit {
   category!: Category;
-  constructor(private categoryServ: CategoryService) { }
+  constructor(private categoryServ: CategoryService, private router: Router) { }
 
   ngOnInit(): void {
     this.category = new Category();
@@ -19,6 +20,9 @@ export class CategoryComponent implements OnInit {
     console.log(this.category);
     this.categoryServ.createCategory(this.category).subscribe(
       resp => {
+        if (resp) {
+          this.router.navigate(['']);
+        }
         this.category = resp;
       });
   }
