@@ -23,9 +23,10 @@ public class CategoryService {
 		return categoryRepository.findAll();
 	}
 	
-	public void addNewCategory(Category category) {
+	public Category addNewCategory(Category category) {
 		categoryRepository.save(category);
 		System.out.println(category);
+		return category;
 	}
 	
 	public void deleteCategory(Long id) {

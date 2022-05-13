@@ -10,6 +10,7 @@ import com.synergy.ecommerce.services.CategoryService;
 
 @RestController
 @RequestMapping(path = "api/v1/category")
+@CrossOrigin(origins="http://localhost:4200")
 public class CategoryController {
 	private final CategoryService categoryService;
 	
@@ -24,8 +25,8 @@ public class CategoryController {
 	}
 	
 	@PostMapping
-	public void registerNewCategory(@RequestBody Category category) {
-		categoryService.addNewCategory(category);
+	public Category registerNewCategory(@RequestBody Category category) {
+		return categoryService.addNewCategory(category);
 	}
 	
 	@DeleteMapping(path = {"/id"})

@@ -1,0 +1,32 @@
+package com.synergy.ecommerce.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.synergy.ecommerce.services.FileLocationService;
+
+@RestController
+@RequestMapping("file-system")
+public class FileSystemImageController {
+
+	@Autowired
+    FileLocationService fileLocationService;
+
+    @PostMapping("/image")
+    Long uploadImage(@RequestParam MultipartFile image) throws Exception {
+        return fileLocationService.save(image.getBytes(), image.getOriginalFilename(),image.getName());
+    }
+
+    @GetMapping(value = "/image/{imageId}", produces = MediaType.IMAGE_JPEG_VALUE)
+    FileSystemResource downloadImage(@PathVariable Long imageId) throws Exception {
+        return fileLocationService.find(imageId);
+    }
+}

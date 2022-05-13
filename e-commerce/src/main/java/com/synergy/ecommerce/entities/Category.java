@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 })
 public class Category {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "category_id", updatable = false,nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "category_id", updatable = false)
 	private Long id;
 	
 	@Column(name = "name", nullable = false, columnDefinition = "TEXT")
@@ -39,7 +39,7 @@ public class Category {
 		
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
