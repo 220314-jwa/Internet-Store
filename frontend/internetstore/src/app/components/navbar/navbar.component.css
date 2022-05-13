@@ -1,0 +1,23 @@
+.positronx {
+    text-decoration: none;
+  }
+  
+  .companyname a{
+    font-size:x-large;
+    
+}
+
+.nav-tool-items a{
+  margin-left: 5px;
+}
+
+mat-menu a{
+  font-size: small;
+}
+
+.menu-item{
+  font-size: medium;
+}
+.nav-tool-items{
+  padding-top: 20px;
+}

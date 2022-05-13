@@ -1,0 +1,32 @@
+mat-icon.mat-card-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+  }
+
+  .center{
+    border: 2px solid;
+    border-color:red;
+    
+  }
+  .my-card img{
+
+
+  }
+  .mat-card-container{
+    border:  2px solid; 
+    border-color:green;
+    
+  }
+  .mat-card-header-container{
+    border:  2px solid; 
+    border-color:yellow;
+    margin:15px 20px;
+    
+  }
+  mat-form-field{
+      width: 100%;
+  }
+  .inputRows{
+      width: 100%;
+  }

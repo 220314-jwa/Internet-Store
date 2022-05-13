@@ -1,0 +1,39 @@
+@import '~@ffdc/uxg-angular-theme/all-theme';
+@import "~bootstrap/dist/css/bootstrap.css";
+html,
+body{
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+a {
+    text-decoration:none;
+ }
+
+ mat-card img{
+ 
+  width: 20%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}
