@@ -56,7 +56,7 @@ public class CustomerServiceTest {
 		Customer mockCustomer = new Customer();
 		mockCustomer.setUsername(username);
 		mockCustomer.setPassword(password);
-		when(customerRepository.findCustomerByUsername(mockCustomer.getUsername())).thenReturn(mockProduct);
+		when(customerRepository.findCustomerByUsername(mockCustomer.getUsername())).thenReturn(mockCustomer);
 		
 		// call the method we're testing
 		Customer result = customerService.login(username, password);
