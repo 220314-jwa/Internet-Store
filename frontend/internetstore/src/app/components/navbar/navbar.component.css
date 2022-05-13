@@ -1,7 +1,4 @@
-.positronx {
-    text-decoration: none;
-  }
-  
+
   .companyname a{
     font-size:x-large;
     
@@ -10,7 +7,11 @@
 .nav-tool-items a{
   margin-left: 5px;
 }
-
+.navbar{
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 mat-menu a{
   font-size: small;
 }
@@ -18,6 +19,16 @@ mat-menu a{
 .menu-item{
   font-size: medium;
 }
-.nav-tool-items{
-  padding-top: 20px;
+
+.rightAlign{
+  display: flex; 
+  justify-content: flex-end;
+}
+.navBar{
+  border: 1px green solid;
+}
+.navbar-brand a{
+  font-size: larger;
+  font-style: oblique;
+  color: palevioletred;
 }

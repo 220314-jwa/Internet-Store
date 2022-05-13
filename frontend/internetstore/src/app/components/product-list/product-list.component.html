@@ -1,2 +1,16 @@
-
-<app-product></app-product>
+<main class="section" *ngIf = "!loading">
+    <h1>Products</h1>
+    <p *ngIf="!loggedInUser">Log in to adopt pets!</p>
+    <div>
+        <label for="productSearch">Search Products: </label>
+        <input [(ngModel)]="productSearchText" type="text" id="productSearch">
+    </div>
+    <div class="products" *ngIf="products && products.length>0; else noProducts">
+        <!-- the pet component has @Input pet field to allow us to pass each pet
+        into it. see the pet component for details -->
+        <app-product *ngFor="let eachProduct of products | productSearch:productSearchText" [product]="eachProduct"></app-product>
+    </div>
+    <ng-template #noProducts>
+        <p>There are no products  available right now, check again later!</p>
+    </ng-template>
+</main>

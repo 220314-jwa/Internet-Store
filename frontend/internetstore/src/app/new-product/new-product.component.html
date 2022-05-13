@@ -8,12 +8,12 @@
       </div>
       <mat-form-field appearance="legacy">
         <mat-label>Product name:</mat-label>
-        <input matInput placeholder="Enter a product's name" [(ngModel)] = "product.name" name = "name" required>
+        <input matInput placeholder="Enter a product's name" [(ngModel)] = "product.name" name = "name">
       </mat-form-field>
   
       <mat-form-field appearance="legacy">
         <mat-label>Category:</mat-label>
-        <input matInput placeholder="Product's category" [(ngModel)] = "product.category" name = "category" required>
+        <input matInput placeholder="Product's category" [(ngModel)] = "product.category" name = "category">
       </mat-form-field>
   
       <mat-form-field appearance="legacy">
@@ -26,10 +26,10 @@
         <input matInput placeholder="Product's code"  [(ngModel)] = "product.code">
       </mat-form-field>
   
-      <mat-form-field appearance="legacy">
-        <mat-label>Production date:</mat-label>
-        <input matInput placeholder="Production date" [(ngModel)] = "product.prodDate">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput   [(ngModel)] = "product.prodDate" >
       </mat-form-field>
-      <button mat-flat-button color="primary">Create product</button>
+      <button mat-flat-button color="primary" (click) = "createProduct()">Create product</button>
     </div>
   </div>

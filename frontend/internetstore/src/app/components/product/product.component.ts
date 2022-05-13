@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -8,21 +8,21 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  products!: Product[];
-  constructor(private productServ:ProductService) { }
+  @Input() product!: Product;
+  constructor(private productServ: ProductService) { }
 
   ngOnInit(): void {
-    this.products = [];
-   this.getProducts();
+    this.product = new Product();
+    //this.getProducts();
   }
- 
-  getProducts() {
-    // when we subscribe to the Observable, it sends the request
-    // and we can set up what we want to do with the response
-    // in a callback function
-    this.productServ.getProducts().subscribe(
-      resp => {
-        this.products = resp;
-      });
-  }
+
+  //getProducts() {
+  // when we subscribe to the Observable, it sends the request
+  // and we can set up what we want to do with the response
+  // in a callback function
+  // this.productServ.getProducts().subscribe(
+  // resp => {
+  //   this.products = resp;
+  //   });
+  //// }
 }
