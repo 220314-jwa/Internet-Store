@@ -10,6 +10,7 @@ import com.synergy.ecommerce.services.CategoryService;
 
 @RestController
 @RequestMapping(path = "api/v1/category")
+@CrossOrigin(origins="http://localhost:4200")
 public class CategoryController {
 	private final CategoryService categoryService;
 	
