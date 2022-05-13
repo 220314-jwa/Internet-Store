@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.synergy.ecommerce.entities.Category;
 import com.synergy.ecommerce.entities.Product;
-import com.synergy.ecommerce.repositories.CategoryRepository;
 import com.synergy.ecommerce.repositories.ProductRepository;
 
 @Service
@@ -24,7 +23,21 @@ public class ProductService {
 	public List<Product> getProducts() {
 		return productRepository.findAll();
 	}
-
+	
+	public Product getProductById(Long id) {
+		return productRepository.getById(id);
+	}
+	
+	public List<Product> getProductsByCategoryId(Long id){
+		return productRepository.findProductsByCategory(id);
+	}
+	
+	public Product getProductByCode(String name) {
+		return productRepository.findProductByCode(name);
+	}
+	public Product getProductByPrice(Double id) {
+		return productRepository.findProductByPrice(id);
+	}
 	public void addNewProduct(Product product) {
 		productRepository.save(product);
 		System.out.println(product);
