@@ -22,10 +22,10 @@
           <div class="menu-item">
             <a routerLink="myOrders" routerLinkActive="active">My orders</a>
           </div>
-          <div class="menu-item">
+          <div class="menu-item" *ngIf="loggedInUser.admin">
             <a routerLink="createProduct" routerLinkActive="active">Create product</a>
           </div>
-          <div class="menu-item">
+          <div class="menu-item" *ngIf="loggedInUser.admin">
             <a routerLink="createCategory" routerLinkActive="active">Create category</a>
           </div>
         </div>
