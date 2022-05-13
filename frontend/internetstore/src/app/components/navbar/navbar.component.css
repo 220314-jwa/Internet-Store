@@ -23,6 +23,7 @@ mat-menu a{
 .rightAlign{
   display: flex; 
   justify-content: flex-end;
+  margin-top:10px;
 }
 .navBar{
   border: 1px green solid;
@@ -31,4 +32,7 @@ mat-menu a{
   font-size: larger;
   font-style: oblique;
   color: palevioletred;
+}
+.navRight{
+margin-top: 20px;
 }
