@@ -34,6 +34,7 @@ export class ProductListComponent implements OnInit {
     this.productServ.getProducts().subscribe(
       resp => {
         this.products = resp;
+        console.log(this.products);
       });
     this.loading = false;
   }

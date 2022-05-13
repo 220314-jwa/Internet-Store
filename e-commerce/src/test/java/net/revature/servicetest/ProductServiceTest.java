@@ -134,21 +134,21 @@ public class ProductServiceTest {
 		assertEquals(mockProduct.getPrice(), product.getPrice());
 		System.out.println(product.getPrice());
 	}
-//	@Test
-//	public void updateProduct() {
-//		Product product = new Product();
-//		Product mockProduct = new Product();
-//		mockProduct.setId(1L);
-//		mockProduct.setName("cucumber");
-//		mockProduct.setPrice(1D);
-//		mockProduct.setCode("vegetable");
-//		mockProduct.setProdDate(new Date());
-//		when(productRepository.save(mockProduct)).thenReturn(mockProduct);
-//		Product result = productService.updateProduct(mockProduct);
-//		
-//		assertEquals(mockProduct.getId(), product.getId());
-//		System.out.println(product.getId());
-//		}
+	@Test
+	public void updateProduct() {
+		Product product = new Product();
+		Product mockProduct = new Product();
+		mockProduct.setId(1L);
+		mockProduct.setName("cucumber");
+		mockProduct.setPrice(1D);
+		mockProduct.setCode("vegetable");
+		mockProduct.setProdDate(new Date());
+		when(productRepository.save(mockProduct)).thenReturn(mockProduct);
+		Product result = productService.updateProduct(1L,"cucumber",120.0,"vegetable",new Date(),new Category());
+		
+		assertEquals(mockProduct.getId(), product.getId());
+		System.out.println(product.getId());
+		}
 	@Test
 	public void addNewProduct() {
 		Product newProduct = new Product();
@@ -167,8 +167,8 @@ public class ProductServiceTest {
 	public void deleteProduct() {
 		
 	}
-	
-	}
+}
+
 
 
 

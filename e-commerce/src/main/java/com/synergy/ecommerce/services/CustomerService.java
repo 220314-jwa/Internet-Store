@@ -52,7 +52,7 @@ public class CustomerService {
 	}
 
 	@Transactional
-	public void updateCustomer(Long customerId, String firstName, String lastName, String email, String address,
+	public Customer updateCustomer(Long customerId, String firstName, String lastName, String email, String address,
 			String password, Long phoneNumber,String username) {
 		
 		Customer customer = customerRepository.findById(customerId)
@@ -67,7 +67,10 @@ public class CustomerService {
 			customer.setPhoneNumber(phoneNumber);
 			customer.setUsername(password);
 			customer.setUsername(username);
+			
 		}
+	
+		return customer;
 		
 		
 	}

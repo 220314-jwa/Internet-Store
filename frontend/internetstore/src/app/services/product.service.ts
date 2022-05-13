@@ -26,7 +26,7 @@ export class ProductService {
 
 
   createProduct(product: Product) {
-    this.body = { name: product.name, price: product.price, category: { id: product.category?.id, description: "", name: "" }, code: product.code, prodDate: product.prodDate }
+    this.body = { name: product.name, price: product.price, category: { id: product.category?.id, description: product.category?.description, name: product.category?.name}, code: product.code, prodDate: product.prodDate }
     console.log(product.name);
     return this.http.post(this.url, this.body, { headers: this.headers }).pipe(
       map(resp => resp as Product)
