@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
@@ -14,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 })
 public class Category {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "category_id", updatable = false)
 	private Long id;
 	
@@ -24,10 +26,12 @@ public class Category {
 	@Column(name = "description", nullable = false, columnDefinition = "TEXT")
 	private String description;
 	
-	 @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	 @JsonManagedReference
+	// @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	/*@OneToMany
+	 @JoinColumn(name = "product_id")
+	@JsonManagedReference
 	 private List<Product>  products = new ArrayList<>();
-	 
+	 */
 	public Category(Long id, String name, String description) {
 		super();
 		this.id = id;
@@ -63,13 +67,13 @@ public class Category {
 		this.description = description;
 	}
 	
-	public List<Product> getProducts() {
+	/*public List<Product> getProducts() {
 		return products;
 	}
 
 	public void setProduct(List<Product> products) {
 		this.products = products;
-	}
+	}*/
 
 	@Override
 	public String toString() {

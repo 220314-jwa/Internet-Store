@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.synergy.ecommerce.entities.Order
-;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import com.synergy.ecommerce.entities.Order;
+@Repository
 public interface OrderRepository extends JpaRepository<Order, Long>{
 
 	List<Order> findOrderByOrderDate(Date orderDate);

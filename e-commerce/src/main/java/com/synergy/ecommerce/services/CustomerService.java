@@ -36,9 +36,9 @@ public class CustomerService {
 	if(customerOptional.isPresent()) {
 		throw new IllegalStateException("email taken");
 	}
-	customerRepository.save(customer);
 	System.out.println(customer);
-	return customer;
+
+	return customerRepository.save(customer);
 		
 	}
 	

@@ -23,6 +23,13 @@ public class ProductService {
 	public List<Product> getProducts() {
 		return productRepository.findAll();
 	}
+
+
+	public Product addNewProduct(Product product) {
+		System.out.println(product);
+		return productRepository.save(product);
+  }
+
 	
 	public Product getProductById(Long id) {
 		return productRepository.getById(id);
