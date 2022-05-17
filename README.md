@@ -30,7 +30,7 @@ Internet Store is a full stack web application in which users can make purchases
 
 ## Getting Started
 
-1. git clone https://github.com/220314-jwa/Tuition-Reimbursement-Management-System.git
+1. git clone [https://github.com/220314-jwa/Tuition-Reimbursement-Management-System.git](https://github.com/220314-jwa/Internet-Store.git)
 2. Install  Postgresql 14 from https://www.postgresql.org/
 3. Install the Java 18 from https://www.java.com
 4. Install Eclipse https://www.eclipse.org/
