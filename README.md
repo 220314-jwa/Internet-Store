@@ -1,4 +1,4 @@
-# TRMS: Internet Store
+# Internet Store
 
 ## Project Description
 
